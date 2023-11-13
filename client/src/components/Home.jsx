@@ -1,23 +1,22 @@
 import styles from './Home.module.css';
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   return (<div className={styles.homeContainer}>
     <section className={styles.introSection}>
-      <div className={styles.introContent}>
+      <div className={styles.introSectionContent}>
+        <div className={styles.introLogo}>
+          <Link to="/" className={styles.navLink}>RecipeApp</Link>
+        </div>
         <div className={styles.introText}>
-          <h1>Welcome to RecipeApp!</h1>
           <p>
             Discover the joy of healthy eating with our delicious and nutritious recipes.
             Eating well is not just about counting calories; it's about nourishing your body and
             enjoying every bite. Explore a variety of recipes tailored to your taste and health goals.
           </p>
         </div>
-        <div className={styles.introImageContainer}>
-          <img
-            className={styles.introImage}
-            src="https://via.placeholder.com/400x400"  // Replace with your actual image URL
-            alt="Healthy Food"
-          />
+        <div className={styles.introContactUs}>
+          <Link to="/about" className={styles.navLink}>About Us</Link>
         </div>
       </div>
     </section>
@@ -35,7 +34,7 @@ export default function Home() {
         <div className={styles.additionalImageContainer}>
           <img
             className={styles.additionalImage}
-            src="https://via.placeholder.com/400x300"  // Replace with your actual image URL
+            src="../../public/Roasted-pork.webp"  // Replace with your actual image URL
             alt="Fresh Vegetables"
           />
         </div>
