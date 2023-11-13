@@ -27,7 +27,7 @@
 
 .quickLinks h3,
 .followUs h3 {
-  border-bottom: 1px solid rgba(255, 255, 255,0.3 );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding-bottom: 10px;
   font-weight: 100;
   font-size: 18px;
@@ -51,21 +51,23 @@
 }
 
 .subscribeFormWrapper input::placeholder {
-  text-indent: 10px;
+  /* text-indent: 10px; */
   font-style: italic;
 }
 
 .subscribeFormWrapper input,
 .subscribeFormWrapper button {
   display: block;
-  width: 100%;
   height: 40px;
+  border: none;
 }
 
 .subscribeFormWrapper input {
-  padding: 0;
-  margin: 0;
-  border: none;
+  padding-left: 5px;
+}
+
+.subscribeFormWrapper input:focus {
+  outline: none;
 }
 
 .subscribeFormWrapper button {
@@ -73,7 +75,6 @@
   color: white;
   text-transform: uppercase;
   cursor: pointer;
-  border: none;
   letter-spacing: 0.15em;
   transition: all 0.2s ease-in-out;
 }
