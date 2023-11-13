@@ -1,0 +1,102 @@
+.homeContainer {
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.introSection {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 40px;
+  border: 1px solid #ddd; /* Neutral border color */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.introContent {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.introText {
+  max-width: 600px;
+  text-align: left;
+  margin-right: 20px;
+}
+
+.introImageContainer {
+  flex-shrink: 0;
+}
+
+.introImage {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.additionalContentSection {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 40px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.additionalContent {
+  display: flex;
+  align-items: center;
+}
+
+.additionalText {
+  max-width: 600px;
+  text-align: left;
+  margin-right: 20px;
+}
+
+.additionalImageContainer {
+  flex-shrink: 0;
+}
+
+.additionalImage {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.statisticsSection {
+  text-align: center;
+  padding: 40px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.statisticsCards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.statCard {
+  width: 250px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.statCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.statCard p {
+  font-size: 1.2rem;
+  margin: 0;
+}

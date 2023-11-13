@@ -1,0 +1,100 @@
+.footerContainer {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+
+.socialIcons a {
+  display: block;
+  color: white;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.quickLinks,
+.followUs {
+  text-transform: uppercase;
+}
+
+.quickLinks a {
+  color: white;
+  font-size: 13px;
+}
+
+.quickLinks li {
+  margin-bottom: 10px;
+}
+
+.quickLinks h3,
+.followUs h3 {
+  border-bottom: 1px solid rgba(255, 255, 255,0.3 );
+  padding-bottom: 10px;
+  font-weight: 100;
+  font-size: 18px;
+}
+
+.subscribeImg {
+  width: 250px;
+}
+
+.subscribeForm {
+  background-color: #2a2a2a;
+}
+
+.subscribeFormWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  justify-content: space-around;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.subscribeFormWrapper input::placeholder {
+  text-indent: 10px;
+  font-style: italic;
+}
+
+.subscribeFormWrapper input,
+.subscribeFormWrapper button {
+  display: block;
+  width: 100%;
+  height: 40px;
+}
+
+.subscribeFormWrapper input {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.subscribeFormWrapper button {
+  background-color: #595959;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.15em;
+  transition: all 0.2s ease-in-out;
+}
+
+.subscribeFormWrapper button:hover {
+  color: #767676;
+}
+
+form {
+  display: flex;
+}
+
+footer {
+  background-color: black;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
