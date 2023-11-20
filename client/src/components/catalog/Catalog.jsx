@@ -1,4 +1,4 @@
-import Layout from "./Layout";
+import Layout from "../Layout";
 import Recipe from "./Recipe";
 
 export default function Catalog() {
