@@ -1,4 +1,5 @@
 import styles from './Footer.module.css';
+import Layout from './Layout';
 
 export default function Footer() {
   return (

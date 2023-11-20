@@ -89,7 +89,10 @@ form {
 
 footer {
   background-color: black;
-  padding: 20px;
+  padding: 20px 0;
+  /* position: absolute;
+  bottom: 0;
+  width: 100%; */
 }
 
 a {
