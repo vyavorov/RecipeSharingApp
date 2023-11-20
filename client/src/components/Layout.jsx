@@ -5,9 +5,9 @@ import Footer from './Footer';
 
 export default function Layout({ children }){
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
       <Header />
-      <div style={{ flex: 1, position: 'relative' }}>
+      <div style={{ flex: 1, position: 'relative', padding: "15px 30px"}}>
         {children}
       </div>
       <Footer style={{ position: 'sticky', bottom: 0 }} />
