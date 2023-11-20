@@ -28,7 +28,8 @@
 .quickLinks h3,
 .followUs h3 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
   font-weight: 100;
   font-size: 18px;
 }
@@ -83,6 +84,10 @@
   color: #767676;
 }
 
+.subscribeFormWrapper p {
+  line-height: 25px;
+}
+
 form {
   display: flex;
 }
@@ -102,3 +107,4 @@ a {
 li {
   list-style-type: none;
 }
+
