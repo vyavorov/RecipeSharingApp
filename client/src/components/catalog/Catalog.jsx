@@ -6,7 +6,7 @@ import styles from './Catalog.module.css';
 export default function Catalog() {
   return (
     <Layout>
-      <Link to="create-recipe" className={styles.addRecipeBtn}><i class="fa fa-plus"></i>  Add recipe </Link>
+      <Link to="create-recipe" className={styles.addRecipeBtn}><i className="fa fa-plus"></i>  Add recipe </Link>
       <Recipe />
     </Layout>
   )
