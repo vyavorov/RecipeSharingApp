@@ -7,7 +7,7 @@ export const create = async (recipeData) => {
         header: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(recipeData);
+        body: JSON.stringify(recipeData)
     })
 
     const result = await response.json();

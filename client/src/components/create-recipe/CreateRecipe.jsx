@@ -1,6 +1,7 @@
 import Layout from "../Layout";
 import styles from './CreateRecipe.module.css';
 import React, { useState } from 'react';
+import { create } from '../../services/recipeService';
 
 export default function CreateRecipe() {
   const [recipeData, setRecipeData] = useState({
@@ -49,7 +50,7 @@ export default function CreateRecipe() {
     });
   };
 
-  const createRecipeHandler = (e) => {
+  const createRecipeHandler = async (e) => {
     e.preventDefault();
 
     // Filter out ingredients with empty values
@@ -63,8 +64,10 @@ export default function CreateRecipe() {
       ingredients: nonEmptyIngredients,
     };
 
+    const result = await create(updatedRecipeData);
+
     // Pass updatedRecipeData to your server or handle the data submission logic here
-    console.log(updatedRecipeData);
+    console.log(result);
   };
 
   // const createRecipeHandler = (e) => {
