@@ -78,12 +78,6 @@ export default function CreateRecipe() {
     // Pass updatedRecipeData to your server or handle the data submission logic here
     console.log(result);
   };
-
-  // const createRecipeHandler = (e) => {
-  //   e.preventDefault();
-  //   const gameData = Object.fromEntries(new FormData(e.currentTarget));
-  //   console.log(gameData);
-  // }
   return (
     <Layout>
       <section className={styles.formSection}>

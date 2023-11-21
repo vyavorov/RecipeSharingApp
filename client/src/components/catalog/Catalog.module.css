@@ -9,3 +9,7 @@
   background-color: #0b7dda;
   color: #fff;
 }
+
+.recipesContainer {
+  display: flex;
+}
