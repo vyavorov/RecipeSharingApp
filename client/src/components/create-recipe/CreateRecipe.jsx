@@ -10,6 +10,7 @@ export default function CreateRecipe() {
     description: '',
     ingredients: [{ name: '', quantity: '' }],
     method: '',
+    imageUrl: '',
   });
 
   const handleChange = (e) => {
@@ -151,6 +152,15 @@ export default function CreateRecipe() {
               value={recipeData.method}
               onChange={handleChange}
             ></textarea>
+
+            <input
+              type="text"
+              id="imageUrl"
+              name="imageUrl"
+              placeholder="Enter recipe image url"
+              value={recipeData.imageUrl}
+              onChange={handleChange}
+            />
 
             <input type="submit" value="Create Recipe" className={`${styles.btn} ${styles.submit}`} />
           </div>
