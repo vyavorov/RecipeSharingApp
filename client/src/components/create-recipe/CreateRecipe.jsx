@@ -67,6 +67,14 @@ export default function CreateRecipe() {
 
     const result = await create(updatedRecipeData);
 
+    setRecipeData({
+      title: '',
+      prepTime: '',
+      description: '',
+      ingredients: [{ name: '', quantity: '' }],
+      method: '',
+      imageUrl: '',
+    });
     // Pass updatedRecipeData to your server or handle the data submission logic here
     console.log(result);
   };
