@@ -1,9 +1,11 @@
 import Layout from "../Layout";
 import styles from './CreateRecipe.module.css';
 import React, { useState } from 'react';
-import { create } from '../../services/recipeService';
+import * as recipeService from '../../services/recipeService';
+import { useNavigate } from "react-router-dom";
 
 export default function CreateRecipe() {
+  const navigate = useNavigate();
   const [recipeData, setRecipeData] = useState({
     title: '',
     prepTime: '',
@@ -54,6 +56,7 @@ export default function CreateRecipe() {
   const createRecipeHandler = async (e) => {
     e.preventDefault();
 
+
     // Filter out ingredients with empty values
     const nonEmptyIngredients = recipeData.ingredients.filter(
       (ingredient) => ingredient.name.trim() !== '' && ingredient.quantity.trim() !== ''
@@ -65,16 +68,22 @@ export default function CreateRecipe() {
       ingredients: nonEmptyIngredients,
     };
 
-    const result = await create(updatedRecipeData);
+    try {
+      await recipeService.create(updatedRecipeData);
+      navigate('/catalog');
+    } catch (err) {
+      console.log(err);
+    }
 
-    setRecipeData({
-      title: '',
-      prepTime: '',
-      description: '',
-      ingredients: [{ name: '', quantity: '' }],
-      method: '',
-      imageUrl: '',
-    });
+
+    // setRecipeData({
+    //   title: '',
+    //   prepTime: '',
+    //   description: '',
+    //   ingredients: [{ name: '', quantity: '' }],
+    //   method: '',
+    //   imageUrl: '',
+    // });
     // Pass updatedRecipeData to your server or handle the data submission logic here
     console.log(result);
   };
