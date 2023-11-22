@@ -74,8 +74,6 @@ export default function CreateRecipe() {
     } catch (err) {
       console.log(err);
     }
-
-
     // setRecipeData({
     //   title: '',
     //   prepTime: '',
@@ -84,8 +82,7 @@ export default function CreateRecipe() {
     //   method: '',
     //   imageUrl: '',
     // });
-    // Pass updatedRecipeData to your server or handle the data submission logic here
-    console.log(result);
+    // console.log(result);
   };
   return (
     <Layout>
