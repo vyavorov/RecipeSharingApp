@@ -1,0 +1,30 @@
+{
+  "24659c2c-bbcb-44db-8897-62bff224a5ca": {
+    "title": "Test",
+    "prepTime": "22",
+    "description": "test descr",
+    "ingredients": [
+      {
+        "name": "eggs",
+        "quantity": "2"
+      }
+    ],
+    "method": "test",
+    "imageUrl": "https://img.delicious.com.au/yWSZZ1Gj/del/2019/09/raw-salmon-avocado-and-beans-115923-4.jpg",
+    "_id": "24659c2c-bbcb-44db-8897-62bff224a5ca"
+  },
+  "7bc68638-1529-4afd-827f-289296b590b9": {
+    "title": "test3",
+    "prepTime": "33",
+    "description": "test3",
+    "ingredients": [
+      {
+        "name": "test3",
+        "quantity": "33"
+      }
+    ],
+    "method": "test3",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoYnNqiQs_UfkEiQrBrcb5ZLZ4Zgsoz-D6PQ&usqp=CAU",
+    "_id": "7bc68638-1529-4afd-827f-289296b590b9"
+  }
+}
