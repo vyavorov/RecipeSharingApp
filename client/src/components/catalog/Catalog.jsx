@@ -26,7 +26,7 @@ export default function Catalog() {
         {recipes.map(recipe => <Recipe key={recipe._id} {...recipe} />)}
       </div>
       {recipes.length === 0 && (
-        <h3 className={styles.noRecipes}>No recipes yet</h3>
+        <h3 className={styles.noRecipes}>No recipes yet...</h3>
       )}
     </Layout>
   )

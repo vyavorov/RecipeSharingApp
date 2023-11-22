@@ -100,6 +100,16 @@ export default function CreateRecipe() {
               onChange={handleChange}
             />
 
+            <label htmlFor="category">Category</label>
+            <input
+              type="text"
+              id="category"
+              name="category"
+              placeholder="Enter recipe category"
+              value={recipeData.category}
+              onChange={handleChange}
+            />
+
             <label htmlFor="prep">Prep Time (minutes)</label>
             <input
               type="number"
@@ -161,6 +171,7 @@ export default function CreateRecipe() {
               onChange={handleChange}
             ></textarea>
 
+            <label htmlFor="imageUrl">Title</label>
             <input
               type="text"
               id="imageUrl"

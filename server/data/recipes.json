@@ -1,6 +1,7 @@
 {
   "24659c2c-bbcb-44db-8897-62bff224a5ca": {
     "title": "Test",
+    "category": "Dinner",
     "prepTime": "22",
     "description": "test descr",
     "ingredients": [
@@ -15,6 +16,7 @@
   },
   "7bc68638-1529-4afd-827f-289296b590b9": {
     "title": "test3",
+    "category": "Salad",
     "prepTime": "33",
     "description": "test3",
     "ingredients": [
