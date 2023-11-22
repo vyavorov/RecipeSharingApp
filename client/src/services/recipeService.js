@@ -27,3 +27,13 @@ export const getAll = async () => {
     return [];
   }
 };
+
+export const getOneById = async (recipeId) => {
+  try {
+    const response = await fetch(`${baseUrl}/${recipeId}`);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error("Error fetching recipes:", err);
+  }
+};

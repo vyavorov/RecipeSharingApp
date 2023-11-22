@@ -171,7 +171,7 @@ export default function CreateRecipe() {
               onChange={handleChange}
             ></textarea>
 
-            <label htmlFor="imageUrl">Title</label>
+            <label htmlFor="imageUrl">Image URL</label>
             <input
               type="text"
               id="imageUrl"
