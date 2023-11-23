@@ -18,12 +18,13 @@ export const create = async (recipeId, username, text) => {
   return result;
 };
 
-export const getAll = async () => {
+export const getAll = async (recipeId) => {
   try {
     const response = await fetch(baseUrl);
     const data = await response.json();
     const commentsArray = Object.values(data);
-    return commentsArray;
+    //TODO: FIX THAT WHEN WE MOVE TO COLLECTIONS
+    return commentsArray.filter(obj => obj.recipeId === recipeId);
   } catch (error) {
     console.error("Error fetching recipes:", error);
     return [];

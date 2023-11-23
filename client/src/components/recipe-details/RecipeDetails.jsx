@@ -17,7 +17,7 @@ export default function RecipeDetails() {
         const result = await recipeService.getOneById(recipeId);
         setRecipe(result);
 
-        const commentsResult = await commentService.getAll();
+        const commentsResult = await commentService.getAll(recipeId);
         setComments(commentsResult);
       } catch (err) {
         console.log(err);
@@ -53,7 +53,7 @@ export default function RecipeDetails() {
     })
 
     // Fetch comments again after adding a new comment
-    const commentsResult = await commentService.getAll();
+    const commentsResult = await commentService.getAll(recipeId);
     setComments(commentsResult);
   }
 
@@ -74,7 +74,7 @@ export default function RecipeDetails() {
                 <h2>Ingredients:</h2>
                 <ul>
                   {recipe.ingredients.map((ingredient, index) => (
-                    <li key={index}>{`${ingredient.name}: ${ingredient.quantity}`}</li>
+                    <li key={index}>  - {`${ingredient.name}: ${ingredient.quantity}`}</li>
                   ))}
                 </ul>
               </div>
@@ -94,7 +94,7 @@ export default function RecipeDetails() {
           )}
 
           {comments.length === 0 && (
-            <h3 className={styles.noComments}>No comments yet...</h3>
+            <p className={styles.noComments}>No comments yet...</p>
           )}
 
           {/* <p className={styles.commentItem}>Ventsy: What a delicious meal!</p> */}
