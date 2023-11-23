@@ -17,3 +17,15 @@ export const create = async (recipeId, username, text) => {
 
   return result;
 };
+
+export const getAll = async () => {
+  try {
+    const response = await fetch(baseUrl);
+    const data = await response.json();
+    const commentsArray = Object.values(data);
+    return commentsArray;
+  } catch (error) {
+    console.error("Error fetching recipes:", error);
+    return [];
+  }
+};

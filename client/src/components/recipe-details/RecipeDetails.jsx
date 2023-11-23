@@ -8,6 +8,7 @@ import * as commentService from '../../services/commentService';
 export default function RecipeDetails() {
   const { recipeId } = useParams();
   const [recipe, setRecipe] = useState({ ingredients: [] });
+  const [comments, setComments] = useState([]);
 
   //GET ONE RECIPE FOR DETAILS FUNCTIONALITY
   useEffect(() => {
@@ -15,6 +16,9 @@ export default function RecipeDetails() {
       try {
         const result = await recipeService.getOneById(recipeId);
         setRecipe(result);
+
+        const commentsResult = await commentService.getAll();
+        setComments(commentsResult);
       } catch (err) {
         console.log(err);
       }
@@ -40,13 +44,17 @@ export default function RecipeDetails() {
   };
 
   //COMMENT CREATE HANDLER
-  const addCommentHandler = (e) => {
+  const addCommentHandler = async (e) => {
     e.preventDefault();
     commentService.create(recipeId, commentData.username, commentData.comment)
     setCommentData({
       username: '',
       comment: ''
     })
+
+    // Fetch comments again after adding a new comment
+    const commentsResult = await commentService.getAll();
+    setComments(commentsResult);
   }
 
   return (
@@ -80,14 +88,23 @@ export default function RecipeDetails() {
         </div>
         <h3 className={styles.commentHeader}>Comments:</h3>
         <section className={styles.commentSection}>
-          <p className={styles.commentItem}>Ventsy: What a delicious meal!</p>
+
+          {comments.map(comment =>
+            <p className={styles.commentItem} key={comment._id}>{comment.username}: {comment.text}</p>
+          )}
+
+          {comments.length === 0 && (
+            <h3 className={styles.noComments}>No comments yet...</h3>
+          )}
+
+          {/* <p className={styles.commentItem}>Ventsy: What a delicious meal!</p> */}
         </section>
       </div>
 
       <article className={styles.createComment}>
         <label>Add new comment:</label>
         <form className={styles.commentsForm} onSubmit={addCommentHandler}>
-          <input type="text" name="username" placeholder="Username..." onChange={handleChange} value={commentData.username}/>
+          <input type="text" name="username" placeholder="Username..." onChange={handleChange} value={commentData.username} />
           <textarea name="comment" placeholder="Comment..." onChange={handleChange} value={commentData.comment}></textarea>
           <input type="submit" value="Add Comment" className={`${styles.btn} ${styles.submit}`} />
         </form>
