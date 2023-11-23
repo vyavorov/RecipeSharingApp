@@ -20,6 +20,10 @@ export const create = async (recipeId, username, text) => {
 
 export const getAll = async (recipeId) => {
   try {
+    const query = new URLSearchParams({
+      where: `recipeId='"${recipeId}"`
+    });
+
     const response = await fetch(baseUrl);
     const data = await response.json();
     const commentsArray = Object.values(data);

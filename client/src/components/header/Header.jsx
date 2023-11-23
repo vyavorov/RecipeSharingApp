@@ -12,6 +12,9 @@ export default function Header() {
         <ul className={styles.navList}>
           <li><Link to="/catalog" className={styles.navLink}>Catalog</Link></li>
           <li><Link to="/about" className={styles.navLink}>About Us</Link></li>
+          <li><Link to="/logout" className={styles.navLink}>Logout</Link></li>
+          <li><Link to="/login" className={styles.navLink}>Login</Link></li>
+          <li><Link to="/register" className={styles.navLink}>Register</Link></li>
           {/* Add more navigation links as needed */}
         </ul>
       </nav>
