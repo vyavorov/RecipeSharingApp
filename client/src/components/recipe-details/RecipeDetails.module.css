@@ -1,6 +1,9 @@
 /* RecipeDetails.module.css */
 .recipeDetails {
   display: flex;
+}
+
+.recipeDetailsWrapper {
   margin: 20px;
   padding: 20px;
   border: 1px solid #ccc;
@@ -62,4 +65,30 @@ ul {
 
 ul li {
   margin-bottom: 5px;
+}
+
+.createComment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.commentHeader {
+  /* text-align: center; */
+  margin-top: 20px;
+}
+
+/* .commentSection {
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+.commentItem {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 50%;
 }

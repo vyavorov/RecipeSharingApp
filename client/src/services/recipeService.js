@@ -5,7 +5,7 @@ const baseUrl = "http://localhost:3030/jsonstore/recipes";
 export const create = async (recipeData) => {
   const response = await fetch(baseUrl, {
     method: "POST",
-    header: {
+    headers: {
       "content-type": "application/json",
     },
     body: JSON.stringify(recipeData),
