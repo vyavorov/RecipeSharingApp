@@ -11,7 +11,7 @@ export default function Footer() {
           <div className={styles.subscribeFormWrapper}>
             <p>Sign up for FREE quick and easy weeknight dinners delivered right to your inbox! You'll receive new recipes as soon as they are published, plus our top 12 recipes free!</p>
             {/* <label htmlFor="email">Email:</label> */}
-            <input type="email" id="email" name="email" placeholder="email address" />
+            <input type="email" id="footer-email" name="email" placeholder="email address" />
             <button type="submit">Subscribe <i className="fa fa-arrow-right"></i></button>
           </div>
         </form>
