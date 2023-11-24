@@ -1,4 +1,9 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+
+import * as authService from './services/authService';
+import AuthContext from './contexts/authContext';
+
 import Home from './components/home/Home';
 import Catalog from './components/catalog/Catalog';
 import AboutUs from './components/about/AboutUs';
@@ -7,14 +12,16 @@ import Login from './components/header/Login';
 import Register from './components/header/Register';
 import CreateRecipe from './components/create-recipe/CreateRecipe';
 import RecipeDetails from './components/recipe-details/RecipeDetails';
-import { useState } from 'react';
-import AuthContext from './contexts/authContext';
 
 function App() {
   const [auth, setAuth] = useState({});
+  const navigate = useNavigate();
 
-  const loginSubmitHandler = (values) => {
-    console.log(values)
+  const loginSubmitHandler = async (values) => {
+    const result = await authService.login(values.email, values.password);
+
+    setAuth(result);
+    navigate('/');
   }
 
   return (
@@ -23,7 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
-          <Route path="/about" element={<AboutUs />} />
+          <Route path="/about" element={<AboutUs />} /> 
           <Route path="/logout" element={<Logout />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
