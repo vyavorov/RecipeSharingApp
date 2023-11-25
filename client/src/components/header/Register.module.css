@@ -1,0 +1,70 @@
+/* RegisterForm.module.css */
+
+.registerForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.registerContainer {
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.registerBrandLogo {
+  background-image: url("path-to-your-logo.png");
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+  margin-bottom: 20px;
+}
+
+.registerTitle {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.registerLabel {
+  display: block;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.registerInput {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.registerInput:focus {
+  border-color: #2196f3;
+}
+
+.registerBtn {
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.registerBtn:hover {
+  background-color: #45a049;
+}
+
+.registerField {
+  margin-top: 15px;
+}
