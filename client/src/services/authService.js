@@ -33,3 +33,14 @@ export const register = async (email, password) => {
 
   return result;
 };
+
+export const logout = async () => {
+  const token = localStorage.getItem("accessToken");
+  if (token) {
+    const response = await fetch(`${baseUrl}/logout`, {
+      headers: {
+        "X-Authorization": token,
+      },
+    });
+  }
+};
