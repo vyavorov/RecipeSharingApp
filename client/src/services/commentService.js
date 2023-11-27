@@ -1,4 +1,5 @@
 const baseUrl = "http://localhost:3030/jsonstore/comments";
+// const baseUrl = "http://localhost:3030/data/comments"; DOESN'T WORK
 
 export const create = async (recipeId, username, text) => {
   const response = await fetch(baseUrl, {

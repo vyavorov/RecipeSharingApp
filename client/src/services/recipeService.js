@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 const baseUrl = "http://localhost:3030/jsonstore/recipes";
+// const baseUrl = "http://localhost:3030/data/recipes"; --> DOESN'T WORK
 
 export const create = async (recipeData) => {
   const response = await fetch(baseUrl, {

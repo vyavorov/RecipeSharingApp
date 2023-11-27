@@ -13,11 +13,11 @@ export default function Header() {
       </div>
       <nav className={styles.navigation}>
         <ul className={styles.navList}>
-          <li><Link to="/catalog" className={styles.navLink}>Catalog</Link></li>
           <li><Link to="/about" className={styles.navLink}>About Us</Link></li>
           {isAuthenticated
             ?
             <>
+              <li><Link to="/catalog" className={styles.navLink}>Catalog</Link></li>
               <li><Link to="/logout" className={styles.navLink}>Logout</Link></li>
               <li className={styles.username}> | {username}</li>
             </>
