@@ -46,9 +46,8 @@ export default function RecipeDetails() {
   //COMMENT CREATE HANDLER
   const addCommentHandler = async (e) => {
     e.preventDefault();
-    commentService.create(recipeId, commentData.username, commentData.comment)
+    commentService.create(recipeId, commentData.comment)
     setCommentData({
-      username: '',
       comment: ''
     })
 
@@ -89,8 +88,8 @@ export default function RecipeDetails() {
         <h3 className={styles.commentHeader}>Comments:</h3>
         <section className={styles.commentSection}>
 
-          {comments.map(comment =>
-            <p className={styles.commentItem} key={comment._id}>{comment.username}: {comment.text}</p>
+          {comments.map(({_id, text, owner: {email}}) =>
+            <p className={styles.commentItem} key={_id}>{email}: {text}</p>
           )}
 
           {comments.length === 0 && (
@@ -104,7 +103,7 @@ export default function RecipeDetails() {
       <article className={styles.createComment}>
         <label>Add new comment:</label>
         <form className={styles.commentsForm} onSubmit={addCommentHandler}>
-          <input type="text" name="username" placeholder="Username..." onChange={handleChange} value={commentData.username} />
+          {/* <input type="text" name="username" placeholder="Username..." onChange={handleChange} value={commentData.username} /> */}
           <textarea name="comment" placeholder="Comment..." onChange={handleChange} value={commentData.comment}></textarea>
           <input type="submit" value="Add Comment" className={`${styles.btn} ${styles.submit}`} />
         </form>

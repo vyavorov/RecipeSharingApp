@@ -1,6 +1,6 @@
 const baseUrl = "http://localhost:3030/data/comments";
 
-export const create = async (recipeId, username, text) => {
+export const create = async (recipeId, text) => {
   const token = localStorage.getItem("accessToken");
   const response = await fetch(baseUrl, {
     method: "POST",
@@ -10,7 +10,6 @@ export const create = async (recipeId, username, text) => {
     },
     body: JSON.stringify({
       recipeId,
-      username,
       text,
     }),
   });
@@ -24,6 +23,7 @@ export const getAll = async (recipeId) => {
   try {
     const query = new URLSearchParams({
       where: `recipeId="${recipeId}"`,
+      load: `owner=_ownerId:users`,
     });
 
     // Check if the collection exists before making the fetch request
@@ -50,8 +50,6 @@ export const getAll = async (recipeId) => {
       return [];
     }
     const data = await response.json();
-    //TODO: FIX THAT WHEN WE MOVE TO COLLECTIONS
-    // return commentsArray.filter((obj) => obj.recipeId === recipeId);
     return data;
   } catch (error) {
     console.error("Error fetching comments:", error);
