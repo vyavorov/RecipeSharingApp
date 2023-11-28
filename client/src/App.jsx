@@ -45,7 +45,7 @@ function App() {
     loginSubmitHandler,
     registerSubmitHandler,
     logoutHandler,
-    username: auth.username,// || auth.email.Split('@')[0],
+    username: auth.email,// || auth.email.Split('@')[0],
     email: auth.email,
     isAuthenticated: !!auth.accessToken,
   }

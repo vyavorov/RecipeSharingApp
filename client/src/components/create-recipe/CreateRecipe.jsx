@@ -13,6 +13,7 @@ export default function CreateRecipe() {
     ingredients: [{ name: '', quantity: '' }],
     method: '',
     imageUrl: '',
+    category: '',
   });
 
   const handleChange = (e) => {
