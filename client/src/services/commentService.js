@@ -51,7 +51,7 @@ export const getAll = async (recipeId) => {
     }
     const data = await response.json();
     console.log(data);
-    const commentsArray = Object.values(data);
+    const commentsArray = data;
     //TODO: FIX THAT WHEN WE MOVE TO COLLECTIONS
     return commentsArray.filter((obj) => obj.recipeId === recipeId);
   } catch (error) {

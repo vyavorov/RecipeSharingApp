@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 const baseUrl = "http://localhost:3030/data/recipes";
 export const create = async (recipeData) => {
-const token = localStorage.getItem('accessToken');
-const response = await fetch(baseUrl, {
+  const token = localStorage.getItem("accessToken");
+  const response = await fetch(baseUrl, {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -43,7 +43,7 @@ export const getAll = async () => {
       return [];
     }
     const data = await response.json();
-    const recipesArray = Object.values(data);
+    const recipesArray = data;
     return recipesArray;
   } catch (error) {
     // console.error("Error fetching recipes:", error);
