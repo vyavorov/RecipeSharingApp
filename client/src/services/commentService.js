@@ -23,7 +23,7 @@ export const create = async (recipeId, username, text) => {
 export const getAll = async (recipeId) => {
   try {
     const query = new URLSearchParams({
-      where: `recipeId='"${recipeId}"`,
+      where: `recipeId="${recipeId}"`,
     });
 
     // Check if the collection exists before making the fetch request
@@ -36,7 +36,7 @@ export const getAll = async (recipeId) => {
     }
 
     // If the collection exists, proceed with the fetch request
-    const response = await fetch(baseUrl);
+    const response = await fetch(`${baseUrl}?${query}`);
 
     if (!response.ok) {
       // Throw an error for non-2xx HTTP statuses
@@ -50,10 +50,9 @@ export const getAll = async (recipeId) => {
       return [];
     }
     const data = await response.json();
-    console.log(data);
-    const commentsArray = data;
     //TODO: FIX THAT WHEN WE MOVE TO COLLECTIONS
-    return commentsArray.filter((obj) => obj.recipeId === recipeId);
+    // return commentsArray.filter((obj) => obj.recipeId === recipeId);
+    return data;
   } catch (error) {
     console.error("Error fetching comments:", error);
     return [];
