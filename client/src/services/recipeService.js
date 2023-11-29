@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-
+const token = localStorage.getItem("accessToken");
 const baseUrl = "http://localhost:3030/data/recipes";
+
 export const create = async (recipeData) => {
-  const token = localStorage.getItem("accessToken");
   const response = await fetch(baseUrl, {
     method: "POST",
     headers: {
@@ -16,6 +16,21 @@ export const create = async (recipeData) => {
 
   return result;
 };
+
+export const edit = async (recipeData, recipeId) => {
+  const response = await fetch(`${baseUrl}/${recipeId}`, {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json",
+      "X-Authorization": token,
+    },
+    body: JSON.stringify(recipeData),
+  });
+
+  const result = await response.json();
+
+  return result;
+}
 
 export const getAll = async () => {
   try {
@@ -46,7 +61,7 @@ export const getAll = async () => {
     const recipesArray = data;
     return recipesArray;
   } catch (error) {
-    // console.error("Error fetching recipes:", error);
+    console.error("Error fetching recipes:", error);
     return [];
   }
 };
