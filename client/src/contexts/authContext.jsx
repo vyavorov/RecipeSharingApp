@@ -36,6 +36,7 @@ export const AuthProvider = ({ children }) => {
     logoutHandler,
     username: auth.email,// || auth.email.Split('@')[0],
     email: auth.email,
+    userId: auth._id,
     isAuthenticated: !!auth.accessToken,
   }
   return (
