@@ -32,6 +32,20 @@ export const edit = async (recipeData, recipeId) => {
   return result;
 }
 
+export const remove = async (recipeId) => {
+  const response = await fetch(`${baseUrl}/${recipeId}`, {
+    method: "DELETE",
+    headers: {
+      "content-type": "application/json",
+      "X-Authorization": token,
+    },
+  });
+
+  const result = await response.json();
+
+  return result;
+}
+
 export const getAll = async () => {
   try {
     // Check if the collection exists before making the fetch request
