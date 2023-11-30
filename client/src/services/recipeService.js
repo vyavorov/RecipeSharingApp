@@ -3,6 +3,7 @@ const token = localStorage.getItem("accessToken");
 const baseUrl = "http://localhost:3030/data/recipes";
 
 export const create = async (recipeData) => {
+  const token = localStorage.getItem("accessToken");
   const response = await fetch(baseUrl, {
     method: "POST",
     headers: {
@@ -18,6 +19,7 @@ export const create = async (recipeData) => {
 };
 
 export const edit = async (recipeData, recipeId) => {
+  const token = localStorage.getItem("accessToken");
   const response = await fetch(`${baseUrl}/${recipeId}`, {
     method: "PUT",
     headers: {
@@ -30,9 +32,10 @@ export const edit = async (recipeData, recipeId) => {
   const result = await response.json();
 
   return result;
-}
+};
 
 export const remove = async (recipeId) => {
+  const token = localStorage.getItem("accessToken");
   const response = await fetch(`${baseUrl}/${recipeId}`, {
     method: "DELETE",
     headers: {
@@ -44,7 +47,7 @@ export const remove = async (recipeId) => {
   const result = await response.json();
 
   return result;
-}
+};
 
 export const getAll = async () => {
   try {
