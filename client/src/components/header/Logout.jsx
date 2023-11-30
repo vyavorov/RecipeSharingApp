@@ -5,17 +5,20 @@ import { useNavigate } from "react-router-dom";
 import AuthContext from "../../contexts/authContext";
 
 export default function Logout() {
-    const navigate = useNavigate();
-    const { logoutHandler } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const { logoutHandler } = useContext(AuthContext);
 
-    useEffect(() => {
-        authService.logout()
-            .then(() => {
-                logoutHandler();
-                navigate('/');
-            })
-            .catch(() => navigate('/'));
-    }, [])
+  useEffect(() => {
+    authService.logout()
+      .then(() => {
+        logoutHandler();
+        navigate('/');
+      })
+      .catch(() => {
+        logoutHandler();
+        navigate('/login')
+      });
+  }, [])
 
-    return null;
+  return null;
 }
