@@ -13,6 +13,7 @@ import RecipeDetails from './components/recipe-details/RecipeDetails';
 import EditRecipe from './components/edit-recipe/EditRecipe';
 import DeleteRecipe from './components/delete-recipe/DeleteRecipe';
 import AuthGuard from './components/guards/AuthGuard';
+import GuestGuard from './components/guards/GuestGuard';
 
 function App() {
   return (
@@ -21,8 +22,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+
+          <Route element={<GuestGuard />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Route>
 
           <Route element={<AuthGuard />}>
             <Route path="/logout" element={<Logout />} />
