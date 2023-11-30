@@ -12,6 +12,7 @@ import CreateRecipe from './components/create-recipe/CreateRecipe';
 import RecipeDetails from './components/recipe-details/RecipeDetails';
 import EditRecipe from './components/edit-recipe/EditRecipe';
 import DeleteRecipe from './components/delete-recipe/DeleteRecipe';
+import AuthGuard from './components/guards/AuthGuard';
 
 function App() {
   return (
@@ -19,16 +20,18 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/catalog" element={<Catalog />} />
-          <Route path="/about" element={<AboutUs />} /> 
-          <Route path="/logout" element={<Logout />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/logout" element={<Logout />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/catalog/create-recipe" element={<CreateRecipe />} />
-          <Route path="/catalog/recipes/:recipeId" element={<RecipeDetails />} />
-          <Route path="/catalog/recipes/:recipeId/edit" element={<EditRecipe />} />
-          <Route path="/catalog/recipes/:recipeId/delete" element={<DeleteRecipe />} />
+
+          <Route element={<AuthGuard />}>
+            <Route path="/logout" element={<Logout />} />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/catalog/create-recipe" element={<CreateRecipe />} />
+            <Route path="/catalog/recipes/:recipeId" element={<RecipeDetails />} />
+            <Route path="/catalog/recipes/:recipeId/edit" element={<EditRecipe />} />
+            <Route path="/catalog/recipes/:recipeId/delete" element={<DeleteRecipe />} />
+          </Route>
         </Routes>
       </AuthProvider>
     </>
