@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import styles from './LatestRecipes.module.css'
 import * as recipeService from '../../../services/recipeService'
 import Recipe from '../../catalog/Recipe';
+import { Link } from 'react-router-dom';
 
 export default function LatestRecipes() {
   const [latestRecipes, setLatestRecipes] = useState([]);
@@ -28,6 +29,7 @@ export default function LatestRecipes() {
       {latestRecipes.length === 0 && (
         <h3 className={styles.noRecipes}>No recipes yet...</h3>
       )}
+      <Link to="catalog" className={styles.viewMore}>View more <i class="fa fa-arrow-right"></i></Link>
     </section>
   )
 }
