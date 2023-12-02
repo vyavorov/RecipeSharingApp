@@ -29,7 +29,7 @@ export default function LatestRecipes() {
       {latestRecipes.length === 0 && (
         <h3 className={styles.noRecipes}>No recipes yet...</h3>
       )}
-      <Link to="catalog" className={styles.viewMore}>View more <i class="fa fa-arrow-right"></i></Link>
+      <Link to="catalog" className={styles.viewMore}>View more <i className="fa fa-arrow-right"></i></Link>
     </section>
   )
 }
