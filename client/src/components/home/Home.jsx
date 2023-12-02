@@ -1,6 +1,7 @@
 import styles from './Home.module.css';
 import { Link } from 'react-router-dom'
 import Layout from '../Layout';
+import LatestRecipes from './latest-recipes/LatestRecipes';
 
 export default function Home() {
   return (
@@ -8,9 +9,9 @@ export default function Home() {
       <div className={styles.homeContainer}>
         <section className={styles.introSection}>
           <div className={styles.introSectionContent}>
-            <div className={styles.introLogo}>
+            {/* <div className={styles.introLogo}>
               <Link to="/" className={styles.navLink}>RecipeApp</Link>
-            </div>
+            </div> */}
             <div className={styles.introText}>
               <p>
                 Discover the joy of healthy eating with our delicious and nutritious recipes.
@@ -43,6 +44,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <LatestRecipes />
 
         <section className={styles.statisticsSection}>
           <h2>How Healthy Eating Boosts Your Brain Productivity</h2>

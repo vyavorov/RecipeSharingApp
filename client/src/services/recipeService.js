@@ -92,3 +92,14 @@ export const getOneById = async (recipeId) => {
     console.error("Error fetching recipes:", err);
   }
 };
+
+export const getLatest = async () => {
+  try {
+    const query = encodeURIComponent("offset=0&pageSize=3");
+    const response = await fetch(`${baseUrl}?sortBy=_createdOn%20desc&${query}`);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error("Error fetching recipes:", err);
+  }
+};

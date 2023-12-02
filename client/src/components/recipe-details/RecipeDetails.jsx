@@ -17,6 +17,7 @@ export default function RecipeDetails() {
         const result = await recipeService.getOneById(recipeId);
         setRecipe(result);
 
+        //GET ALL COMMENTS FROM SERVER
         const commentsResult = await commentService.getAll(recipeId);
         setComments(commentsResult);
       } catch (err) {
