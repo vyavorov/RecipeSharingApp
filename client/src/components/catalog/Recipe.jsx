@@ -5,7 +5,7 @@ import AuthContext from '../../contexts/authContext';
 import DeleteRecipe from '../delete-recipe/DeleteRecipe';
 import * as recipeService from '../../services/recipeService';
 
-export default function Recipe({ _id, title, imageUrl, prepTime, _ownerId, updateRecipes }) {
+export default function Recipe({ _id, title, imageUrl, prepTime, _ownerId, updateRecipes, latest }) {
   const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -22,7 +22,9 @@ export default function Recipe({ _id, title, imageUrl, prepTime, _ownerId, updat
     try {
       await recipeService.remove(_id);
       setDeleteModalOpen(false);
-      navigate('/catalog');
+      if (!latest) {
+        navigate('/catalog');
+      }
       updateRecipes();
     } catch (err) {
       console.log(err);
@@ -38,13 +40,12 @@ export default function Recipe({ _id, title, imageUrl, prepTime, _ownerId, updat
         <div className={styles.recipeTime}>{prepTime} minutes</div>
         <div className={styles.recipeButtons}>
           {_ownerId === userId &&
-            <Link to={`recipes/${_id}/edit`} className={`${styles.recipeButton} ${styles.editButton}`}>Edit</Link>
+            <Link to={latest ? `catalog/recipes/${_id}/edit` : `recipes/${_id}/edit`} className={`${styles.recipeButton} ${styles.editButton}`}>Edit</Link>
           }
 
-          <Link to={`recipes/${_id}`} className={`${styles.recipeButton} ${styles.detailsButton}`}>Details</Link>
+          <Link to={latest ? `catalog/recipes/${_id}` : `recipes/${_id}`} className={`${styles.recipeButton} ${styles.detailsButton}`}>Details</Link>
 
           {_ownerId === userId &&
-            // <Link to={`recipes/${_id}/delete`} className={`${styles.recipeButton} ${styles.deleteButton}`}>Delete</Link>
             <button
               onClick={openDeleteModal}
               className={`${styles.recipeButton} ${styles.deleteButton}`}
