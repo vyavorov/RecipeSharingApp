@@ -1,0 +1,36 @@
+.aboutUsContainer {
+    padding: 20px;
+  }
+  
+  .aboutUsContent {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .aboutUsText {
+    margin-bottom: 20px;
+  }
+  
+  .aboutUsTeam {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .teamMember {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .teamMemberImage {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .additionalSection {
+    margin-top: 40px;
+  }
