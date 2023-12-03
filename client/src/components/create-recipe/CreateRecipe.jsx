@@ -192,7 +192,6 @@ export default function CreateRecipe() {
 
             {imageUrlError && <p className={styles.error}>{imageUrlError}</p>}
 
-
             <input type="submit" value="Create Recipe" className={`${styles.btn} ${styles.submit}`} />
           </div>
         </form>

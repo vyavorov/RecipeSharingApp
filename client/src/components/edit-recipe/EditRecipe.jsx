@@ -39,6 +39,9 @@ export default function EditRecipe() {
     fetchData();
   }, [recipeId]);
 
+  const [imageUrlError, setImageUrlError] = useState('');
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -80,6 +83,14 @@ export default function EditRecipe() {
   const editRecipeHandler = async (e) => {
     e.preventDefault();
 
+    try {
+      await recipeService.isValidImageUrl(recipeData.imageUrl);
+      setImageUrlError('');
+    }
+    catch (error) {
+      setImageUrlError(error.message);
+      return;
+    }
 
     // Filter out ingredients with empty values
     const nonEmptyIngredients = recipeData.ingredients.filter(
@@ -107,6 +118,7 @@ export default function EditRecipe() {
             <h1>Edit Recipe</h1>
             <label htmlFor="title">Title</label>
             <input
+              required
               type="text"
               id="title"
               name="title"
@@ -117,6 +129,7 @@ export default function EditRecipe() {
 
             <label htmlFor="category">Category</label>
             <input
+              required
               type="text"
               id="category"
               name="category"
@@ -127,6 +140,7 @@ export default function EditRecipe() {
 
             <label htmlFor="prep">Prep Time (minutes)</label>
             <input
+              required
               type="number"
               id="prep"
               name="prepTime"
@@ -138,6 +152,7 @@ export default function EditRecipe() {
 
             <label htmlFor="description">Description</label>
             <textarea
+              required
               id="description"
               name="description"
               placeholder="Enter recipe description"
@@ -179,6 +194,7 @@ export default function EditRecipe() {
 
             <label htmlFor="method">Method</label>
             <textarea
+              required
               id="method"
               name="method"
               placeholder="Enter recipe method"
@@ -188,6 +204,7 @@ export default function EditRecipe() {
 
             <label htmlFor="imageUrl">Image URL</label>
             <input
+              required
               type="text"
               id="imageUrl"
               name="imageUrl"
@@ -195,6 +212,8 @@ export default function EditRecipe() {
               value={recipeData.imageUrl}
               onChange={handleChange}
             />
+
+            {imageUrlError && <p className={styles.error}>{imageUrlError}</p>}
 
             <input type="submit" value="Edit Recipe" className={`${styles.btn} ${styles.submit}`} />
           </div>
