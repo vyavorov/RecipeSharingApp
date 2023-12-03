@@ -1,20 +1,28 @@
 const baseUrl = "http://localhost:3030/users";
 
 export const login = async (email, password) => {
-  const response = await fetch(`${baseUrl}/login`, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({
-      email,
-      password,
-    }),
-  });
+  try {
+    const response = await fetch(`${baseUrl}/login`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
 
-  const result = await response.json();
+    if (!response.ok) {
+      throw new Error(`Login failed with status: ${response.status}`);
+    }
 
-  return result;
+    const result = await response.json();
+
+    return result;
+  } catch (error) {
+    throw new Error("Username or password is incorrect");
+  }
 };
 
 export const register = async (email, password) => {

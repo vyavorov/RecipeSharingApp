@@ -9,7 +9,7 @@ export default function Login() {
 
   const { loginSubmitHandler } = useContext(AuthContext);
 
-  const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+  const { values, onChange, onSubmit, error } = useForm(loginSubmitHandler, {
     email: '',
     password: ''
   });
@@ -23,6 +23,7 @@ export default function Login() {
             <h1>login</h1>
             <label htmlFor="email">Email:</label>
             <input type="email"
+              required
               name="email"
               id="email"
               placeholder="email address"
@@ -32,12 +33,16 @@ export default function Login() {
 
             <label htmlFor="password">Password:</label>
             <input type="password"
+              required
               name="password"
               id="password"
               placeholder="password"
               onChange={onChange}
               value={values.password}
             />
+
+            {error && <p className={styles.error}>{error}</p>}
+
 
             <input type="submit"
               value="Login"
