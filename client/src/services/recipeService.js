@@ -102,3 +102,28 @@ export const getLatest = async () => {
     console.error("Error fetching recipes:", err);
   }
 };
+
+// Utility function to check if the provided URL points to a valid image
+export const isValidImageUrl = async (imageUrl) => {
+  if (imageUrl.trim() === '') {
+    throw new Error('Image URL is required.');
+  }
+
+  try {
+    const response = await fetch(imageUrl, { method: 'HEAD' });
+
+    if (!response.ok) {
+      throw new Error('Invalid image URL or server error.');
+    }
+
+    const contentType = response.headers.get('Content-Type');
+    if (!contentType || !contentType.startsWith('image/')) {
+      throw new Error('The provided URL is not an image.');
+    }
+
+    return true;
+  } catch (error) {
+    console.error('Error checking image URL:', error);
+    throw error;
+  }
+};
