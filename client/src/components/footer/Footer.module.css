@@ -40,6 +40,7 @@
 
 .subscribeForm {
   background-color: #2a2a2a;
+  max-width: 100%;
 }
 
 .subscribeFormWrapper {
@@ -108,3 +109,20 @@ li {
   list-style-type: none;
 }
 
+@media only screen and (max-width: 500px) {
+  .subscribeForm form {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .footerContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerContainer > * {
+    margin-bottom: 16px;
+  }
+}
