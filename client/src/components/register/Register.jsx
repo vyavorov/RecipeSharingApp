@@ -8,7 +8,7 @@ import AuthContext from "../../contexts/authContext";
 export default function Register() {
     const { registerSubmitHandler } = useContext(AuthContext);
 
-    const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
+    const { values, onChange, onSubmit, error } = useForm(registerSubmitHandler, {
         email: '',
         password: '',
         confirmPassword: ''
@@ -23,6 +23,7 @@ export default function Register() {
                         <h1 className={styles.registerTitle}>Register</h1>
                         <label htmlFor="email" className={styles.registerLabel}>Email:</label>
                         <input type="email"
+                            required
                             name="email"
                             id="email"
                             placeholder="Email..."
@@ -35,6 +36,7 @@ export default function Register() {
                             Password:
                         </label>
                         <input
+                            required
                             type="password"
                             name="password"
                             id="password"
@@ -48,6 +50,7 @@ export default function Register() {
                             Confirm Password:
                         </label>
                         <input
+                            required
                             type="password"
                             name="confirmPassword"
                             id="confirmPassword"
@@ -56,6 +59,8 @@ export default function Register() {
                             value={values.confirmPassword}
                             onChange={onChange}
                         />
+
+                        {error && <p className={styles.error}>{error}</p>}
 
                         <input type="submit" value="Register" className={`${styles.registerBtn}`} />
 

@@ -8,7 +8,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
-  const [auth, setAuth] = usePersistedState('auth',{});
+  const [auth, setAuth] = usePersistedState('auth', {});
 
   const loginSubmitHandler = async (values) => {
     const result = await authService.login(values.email, values.password);
@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
   }
 
   const registerSubmitHandler = async (values) => {
-    const result = await authService.register(values.email, values.password);
+    const result = await authService.register(values.email, values.password, values.confirmPassword);
     setAuth(result);
     localStorage.setItem('accessToken', result.accessToken);
     navigate('/');

@@ -68,3 +68,7 @@
 .registerField {
   margin-top: 15px;
 }
+
+.error {
+  color: red;
+}

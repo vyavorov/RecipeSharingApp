@@ -17,8 +17,7 @@ export default function useForm(submitHandler, initialValues) {
     try {
       await submitHandler(values);
     } catch (err) {
-      const errorMsg = "Username or password is incorrect";
-      setError(errorMsg);
+      setError(err.message);
     }
   };
 

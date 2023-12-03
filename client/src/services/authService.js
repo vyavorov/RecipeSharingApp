@@ -25,21 +25,35 @@ export const login = async (email, password) => {
   }
 };
 
-export const register = async (email, password) => {
-  const response = await fetch(`${baseUrl}/register`, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({
-      email,
-      password,
-    }),
-  });
+export const register = async (email, password, confirmPassword) => {
+  try {
+    if (password !== confirmPassword) {
+      throw new Error("Passwords do not match");
+    }
+    else if (password.length < 6) {
+      throw new Error("Password must be at least 6 characters");
+    }
+    const response = await fetch(`${baseUrl}/register`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
 
-  const result = await response.json();
+    if (!response.ok) {
+      throw new Error(`This user already exists`);
+    }
 
-  return result;
+    const result = await response.json();
+
+    return result;
+  } catch (error) {
+    throw new Error(error.message);
+  }
 };
 
 export const logout = async () => {
