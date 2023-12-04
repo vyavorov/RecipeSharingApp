@@ -109,6 +109,14 @@ li {
   list-style-type: none;
 }
 
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
 @media only screen and (max-width: 500px) {
   .subscribeForm form {
     flex-direction: column;
