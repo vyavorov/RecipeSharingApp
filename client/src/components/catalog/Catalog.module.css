@@ -13,8 +13,27 @@
 .recipesContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .noRecipes {
   margin-top: 30px;
+}
+
+.pagesWrapper {
+  text-align: center;
+}
+
+.activeBtn,
+.pageBtn {
+  padding: 10px;
+  margin:10px;
+  cursor: pointer;
+}
+
+.activeBtn {
+  border: none;
+}
+
+.pageBtn {
 }

@@ -49,7 +49,40 @@ export const remove = async (recipeId) => {
   return result;
 };
 
-export const getAll = async () => {
+export const getAll = async (offset,pageSize) => {
+  try {
+    // Check if the collection exists before making the fetch request
+    const collectionsResponse = await fetch("http://localhost:3030/data");
+    const collectionsData = await collectionsResponse.json();
+
+    if (!collectionsData.includes("recipes")) {
+      console.warn("Recipes collection not found. Returning empty array.");
+      return [];
+    }
+
+    // If the collection exists, proceed with the fetch request
+    const response = await fetch(`${baseUrl}?offset=${offset}&pageSize=${pageSize}`);
+
+    if (!response.ok) {
+      // Throw an error for non-2xx HTTP statuses
+      throw new Error(`Failed to fetch recipes. Status: ${response.status}`);
+    }
+
+    // Check if the response body is empty
+    const contentLength = response.headers.get("content-length");
+    if (contentLength && parseInt(contentLength, 10) === 0) {
+      console.warn("Empty response received while fetching recipes.");
+      return [];
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching recipes:", error);
+    return [];
+  }
+};
+
+export const getAllCount = async () => {
   try {
     // Check if the collection exists before making the fetch request
     const collectionsResponse = await fetch("http://localhost:3030/data");
@@ -75,13 +108,13 @@ export const getAll = async () => {
       return [];
     }
     const data = await response.json();
-    const recipesArray = data;
-    return recipesArray;
-  } catch (error) {
+    return data.length;
+  }
+  catch (error) {
     console.error("Error fetching recipes:", error);
     return [];
   }
-};
+}
 
 export const getOneById = async (recipeId) => {
   try {
