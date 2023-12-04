@@ -25,7 +25,7 @@ export default function Recipe({ _id, title, imageUrl, prepTime, _ownerId, updat
       if (!latest) {
         navigate('/catalog');
       }
-      updateRecipes();
+      updateRecipes(0,3);
     } catch (err) {
       console.log(err);
     }

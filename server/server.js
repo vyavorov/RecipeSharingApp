@@ -1491,6 +1491,186 @@
         _createdOn: 1701158944866,
         _id: "0d0a304d-c13f-44e5-bc87-9e9b7479f6e4",
       },
+      "7d0e5e94-0bf4-42bc-9701-8d957ab8a3ea": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        title: "Ultimate spaghetti carbonara recipe",
+        prepTime: "20",
+        description:
+          "Discover how to make traditional spaghetti carbonara. This classic Italian pasta dish combines a silky cheese sauce with crisp pancetta and black pepper.",
+        ingredients: [
+          {
+            name: "pancetta",
+            quantity: "100g",
+          },
+          {
+            name: "pecorino cheese",
+            quantity: "50g",
+          },
+          {
+            name: "parmesan",
+            quantity: "50g",
+          },
+          {
+            name: "large eggs",
+            quantity: "3",
+          },
+          {
+            name: "spaghetti",
+            quantity: "350g",
+          },
+          {
+            name: "plump garlic cloves, peeled and left whole",
+            quantity: "2",
+          },
+          {
+            name: "unsalted butter",
+            quantity: "50g",
+          },
+        ],
+        method:
+          "STEP 1 Put a large saucepan of water on to boil. STEP 2 Finely chop the 100g pancetta, having first removed any rind. Finely grate 50g pecorino cheese and 50g parmesan and mix them together. STEP 3 Beat the 3 large eggs in a medium bowl and season with a little freshly grated black pepper. Set everything aside. STEP 4 Add 1 tsp salt to the boiling water, add 350g spaghetti and when the water comes back to the boil, cook at a constant simmer, covered, for 10 minutes or until al dente (just cooked). STEP 5 Squash 2 peeled plump garlic cloves with the blade of a knife, just to bruise it. STEP 6 While the spaghetti is cooking, fry the pancetta with the garlic. Drop 50g unsalted butter into a large frying pan or wok and, as soon as the butter has melted, tip in the pancetta and garlic. STEP 7 Leave to cook on a medium heat for about 5 minutes, stirring often, until the pancetta is golden and crisp. The garlic has now imparted its flavour, so take it out with a slotted spoon and discard. STEP 8 Keep the heat under the pancetta on low. When the pasta is ready, lift it from the water with a pasta fork or tongs and put it in the frying pan with the pancetta. Don’t worry if a little water drops in the pan as well (you want this to happen) and don’t throw the pasta water away yet. STEP 9 Mix most of the cheese in with the eggs, keeping a small handful back for sprinkling over later. STEP 10 Take the pan of spaghetti and pancetta off the heat. Now quickly pour in the eggs and cheese. Using the tongs or a long fork, lift up the spaghetti so it mixes easily with the egg mixture, which thickens but doesn’t scramble, and everything is coated. STEP 11 Add extra pasta cooking water to keep it saucy (several tablespoons should do it). You don’t want it wet, just moist. Season with a little salt, if needed. STEP 12 Use a long-pronged fork to twist the pasta on to the serving plate or bowl. Serve immediately with a little sprinkling of the remaining cheese and a grating of black pepper. If the dish does get a little dry before serving, splash in some more hot pasta water and the glossy sauciness will be revived.",
+        imageUrl:
+          "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1001491_11-2e0fa5c.jpg?quality=90&webp=true&resize=375,341",
+        category: "Dinner",
+        _createdOn: 1701703034137,
+        _id: "7d0e5e94-0bf4-42bc-9701-8d957ab8a3ea",
+      },
+      "fafef5d4-c408-4796-8756-b4ff653a96f3": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        title: "Triple-layered berry cheesecake",
+        prepTime: "30",
+        description:
+          "Make this showstopping cheesecake for summer entertaining. Top with strawberries or a mix of fresh berries, plus a drizzle of chocolate for extra indulgence",
+        ingredients: [
+          {
+            name: "butter, melted, plus extra for the tin",
+            quantity: "100g",
+          },
+          {
+            name: "digestive biscuits",
+            quantity: "200g",
+          },
+          {
+            name: "gelatine leaves",
+            quantity: "2",
+          },
+          {
+            name: "raspberries",
+            quantity: "50g",
+          },
+          {
+            name: "caster sugar, plus 2 tbsp",
+            quantity: "50g",
+          },
+          {
+            name: "strawberries",
+            quantity: "350g",
+          },
+          {
+            name: "full-fat soft cheese",
+            quantity: "500g",
+          },
+          {
+            name: "double cream",
+            quantity: "250ml",
+          },
+          {
+            name: "red or pink food colouring",
+            quantity: "few drops",
+          },
+          {
+            name: "vanilla bean paste",
+            quantity: "1 tbsp",
+          },
+          {
+            name: "white chocolate, melted",
+            quantity: "50g",
+          },
+        ],
+        method:
+          "STEP 1 Butter and line the base and sides of a 20cm springform tin. Blitz the digestives in a food processor until you get fine crumbs, or bash in a sandwich bag with a rolling pin. Transfer to a bowl and stir in the melted butter until it looks like damp sand. Tip into the prepared tin, and smooth the mixture with the back of a spoon to make an even base, then chill. STEP 2 Soak the gelatine leaves in cold water. Put the raspberries in a food processor or in a jug using a stick blender, and blitz to a smooth purée. Sieve out the seeds. Warm the raspberry sauce in a small pan with 1 tbsp sugar until just starting to steam, then pour over 1 drained gelatine leaf in a bowl and stir to dissolve. STEP 3 Blitz 3 (about 65g) of the strawberries in a food processor, and warm through with 1 tbsp sugar in the same way. Tip into a bowl and stir in the other drained gelatine leaf. STEP 4 Whisk the soft cheese, cream and caster sugar until it just starts to thicken. Divide between three bowls (about 260g per bowl). Fold the strawberry purée into one with a few drops of food colouring to make it light pink, the raspberry mix with the gelatine into another with more food colouring so it’s dark pink, and the vanilla bean paste into the third. STEP 5 Spoon the raspberry filling over the biscuit base, smoothing the surface so it’s flat. Next, add the strawberry filling, gently smoothing over without disturbing the bottom layer, then repeat with the vanilla mixture, using a clean spoon to level the top. A spatula or knife might help with this to keep from dragging the below layers. Chill for 4 hrs or overnight. STEP 6 Run a knife around the sides of the cake tin between the cheesecake and the parchment, and loosen the base. Transfer to a cake stand, and smooth the sides, using a palette knife, to neaten the layers. Mix the chocolate with a few drops of lemon extract, if using. Pile the remaining strawberries, some sliced, some whole, on top, and drizzle over the chocolate to finish.",
+        imageUrl:
+          "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/triple-layered-berry-cheesecake-878b1b4.jpg?quality=90&webp=true&resize=375,341",
+        category: "Dessert",
+        _createdOn: 1701703352117,
+        _id: "fafef5d4-c408-4796-8756-b4ff653a96f3",
+      },
+      "faef9a45-9977-4db8-94a9-f8cb647315ca": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        title: "Pan-fried rib-eye steak",
+        prepTime: "10",
+        description:
+          "Serve beef rib meat at least medium-rare, if not medium, to cook the fat running through it. This gives the meat lots of flavour – great with a red wine sauce",
+        ingredients: [
+          {
+            name: "rib-eye steaks, each about 200g and 2cm thick",
+            quantity: "2",
+          },
+          {
+            name: "sunflower oil",
+            quantity: "1tbsp",
+          },
+          {
+            name: "butter",
+            quantity: "1 tbsp/25g",
+          },
+          {
+            name: "garlic clove, left whole but bashed once",
+            quantity: "1",
+          },
+        ],
+        method:
+          "STEP 1 Up to 8 hrs before cooking, pat the steaks dry with kitchen paper and season with salt and pepper. Heat the oil over a high flame in a heavy-based frying pan that will comfortably fit both steaks. When the oil is shimmering, turn the heat down to medium-high and add the butter. Once it’s sizzling, carefully lay the steaks in the pan, tucking the garlic and herbs in at the sides. STEP 2 Stand over the steaks with a pair of tongs, searing and turning them every 30 seconds to 1 min so they get a nice brown crust. As a rough guide, each steak will take 4 mins in total for rare, 5-6 mins in total for medium and 8-10 mins for well done. If you have a digital cooking thermometer, the temperatures you're looking for in middle of the steak are 50C for rare, 60C for medium and 70C for well done. Leave the steaks to rest for at least 5 mins. While the steaks are resting, you can make a classic red wine sauce to go with them.",
+        imageUrl:
+          "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/rib-eye-steak-b24c48d.jpg?quality=90&webp=true&resize=375,341",
+        category: "Dinner",
+        _createdOn: 1701703431650,
+        _id: "faef9a45-9977-4db8-94a9-f8cb647315ca",
+      },
+      "38a462fd-64c5-4943-bd3e-4ddc5f50166a": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        title: "Simple sushi",
+        prepTime: "40",
+        description:
+          "Kids can help with this Japanese dish. They can help cook the sticky rice and then roll and assemble the pieces with their preferred ingredients",
+        ingredients: [
+          {
+            name: "sushi rice",
+            quantity: "300g",
+          },
+          {
+            name: "rice wine vinegar",
+            quantity: "100ml",
+          },
+          {
+            name: "golden caster sugar",
+            quantity: "2 tbsp",
+          },
+          {
+            name: "mayonnaise",
+            quantity: "3 tbsp",
+          },
+          {
+            name: "rice wine vinegar",
+            quantity: "1 tbsp",
+          },
+          {
+            name: "soy sauce",
+            quantity: "1 tsp",
+          },
+          {
+            name: "bag nori (seaweed) sheets",
+            quantity: "25g",
+          },
+        ],
+        method:
+          "STEP 1 KIDS the writing in bold is for you. ADULTS the rest is for you. TO MAKE SUSHI ROLLS: Pat out some rice. Lay a nori sheet on the mat, shiny-side down. Dip your hands in the vinegared water, then pat handfuls of rice on top in a 1cm thick layer, leaving the furthest edge from you clear. STEP 2 Spread over some Japanese mayonnaise. Use a spoon to spread out a thin layer of mayonnaise down the middle of the rice. STEP 3 Add the filling. Get your child to top the mayonnaise with a line of their favourite fillings – here we’ve used tuna and cucumber. STEP 4 Roll it up. Lift the edge of the mat over the rice, applying a little pressure to keep everything in a tight roll. STEP 5 Stick down the sides like a stamp. When you get to the edge without any rice, brush with a little water and continue to roll into a tight roll. STEP 6 Wrap in cling film. Remove the mat and roll tightly in cling film before a grown-up cuts the sushi into thick slices, then unravel the cling film. STEP 7 TO MAKE PRESSED SUSHI: Layer over some smoked salmon. Line a loaf tin with cling film, then place a thin layer of smoked salmon inside on top of the cling film. STEP 8 Cover with rice and press down. Press about 3cm of rice over the fish, fold the cling film over and press down as much as you can, using another tin if you have one. STEP 9 Tip it out like a sandcastle. Turn block of sushi onto a chopping board. Get a grown-up to cut into fingers, then remove the cling film. STEP 10 TO MAKE SUSHI BALLS: Choose your topping. Get a small square of cling film and place a topping, like half a prawn or a small piece of smoked salmon, on it. Use damp hands to roll walnut-sized balls of rice and place on the topping. STEP 11 Make into tight balls. Bring the corners of the cling film together and tighten into balls by twisting it up, then unwrap and serve.",
+        imageUrl:
+          "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/sushi-cdb372e.jpg?quality=90&webp=true&resize=375,341",
+        category: "Dinner",
+        _createdOn: 1701703584317,
+        _id: "38a462fd-64c5-4943-bd3e-4ddc5f50166a",
+      },
     },
     comments: {
       "e13410fc-ace7-45b9-b12b-ce393ba499e9": {

@@ -1,5 +1,4 @@
 import styles from './Footer.module.css';
-import Layout from '../Layout';
 import { useState } from 'react';
 import * as subscriberService from '../../services/subscribeService';
 
