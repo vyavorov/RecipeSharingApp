@@ -23,8 +23,6 @@ export default function Favorites() {
             console.error("Error fetching favorites:", error);
         }
     };
-
-
     return (
         <Layout>
             <div className={styles.recipesContainer}>

@@ -100,4 +100,5 @@ ul li {
   position: absolute;
   right: 10px;
   cursor: pointer;
+  transition: fill 0.3s ease; /* Add transition property for fill color change */
 }
