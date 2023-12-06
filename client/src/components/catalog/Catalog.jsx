@@ -28,7 +28,7 @@ export default function Catalog() {
       setCurrentPage(pageClicked);
       return;
     }
-      setOffset((pageClicked - 1) * pageSizeToTake);
+    setOffset((pageClicked - 1) * pageSizeToTake);
     setCurrentPage(pageClicked);
   }
 
@@ -54,7 +54,7 @@ export default function Catalog() {
     <Layout>
       <Link to="create-recipe" className={styles.addRecipeBtn}><i className="fa fa-plus"></i>  Add recipe </Link>
       <div className={styles.recipesContainer}>
-        {recipes.map(recipe => <Recipe key={recipe._id} {...recipe} updateRecipes={updateRecipes} latest={false} />)}
+        {recipes.map(recipe => <Recipe key={recipe._id} {...recipe} updateRecipes={updateRecipes} latest={false} isFavorites={false} />)}
       </div>
       {recipes.length === 0 && (
         <h3 className={styles.noRecipes}>No recipes yet...</h3>

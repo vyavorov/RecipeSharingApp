@@ -28,6 +28,7 @@ export default function Header() {
             ?
             <>
               <li><Link to="/catalog" className={styles.navLink}>Catalog</Link></li>
+              <li><Link to="/favorites" className={styles.navLink}>Favorites</Link></li>
               <li><Link to="/logout" className={styles.navLink}>Logout</Link></li>
               <li className={styles.username}> | {username}</li>
             </>

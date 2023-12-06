@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-const token = localStorage.getItem("accessToken");
 const baseUrl = "http://localhost:3030/data/recipes";
 
 export const create = async (recipeData) => {

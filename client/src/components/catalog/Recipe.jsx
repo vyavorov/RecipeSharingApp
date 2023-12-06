@@ -5,7 +5,7 @@ import AuthContext from '../../contexts/authContext';
 import DeleteRecipe from '../delete-recipe/DeleteRecipe';
 import * as recipeService from '../../services/recipeService';
 
-export default function Recipe({ _id, title, imageUrl, prepTime, _ownerId, updateRecipes, latest, description }) {
+export default function Recipe({ _id, title, imageUrl, prepTime, _ownerId, updateRecipes, latest, description, isFavorites }) {
   const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -42,13 +42,13 @@ export default function Recipe({ _id, title, imageUrl, prepTime, _ownerId, updat
         {/* REMOVE THE BELOW CONDITION IF BUTTONS ARE TO BE SHOWN ON HOME PAGE */}
         {!latest && (
           <div className={styles.recipeButtons}>
-            {_ownerId === userId &&
+            {_ownerId === userId && !isFavorites &&
               <Link to={latest ? `catalog/recipes/${_id}/edit` : `recipes/${_id}/edit`} className={`${styles.recipeButton} ${styles.editButton}`}>Edit</Link>
             }
 
-            <Link to={latest ? `catalog/recipes/${_id}` : `recipes/${_id}`} className={`${styles.recipeButton} ${styles.detailsButton}`}>Details</Link>
+            <Link to={isFavorites ? `../catalog/recipes/${_id}` : (latest ? `catalog/recipes/${_id}` : `recipes/${_id}`)} className={`${styles.recipeButton} ${styles.detailsButton}`}>Details</Link>
 
-            {_ownerId === userId &&
+            {_ownerId === userId && !isFavorites &&
               <button
                 onClick={openDeleteModal}
                 className={`${styles.recipeButton} ${styles.deleteButton}`}

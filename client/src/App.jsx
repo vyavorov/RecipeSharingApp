@@ -14,6 +14,7 @@ import EditRecipe from './components/edit-recipe/EditRecipe';
 import DeleteRecipe from './components/delete-recipe/DeleteRecipe';
 import AuthGuard from './components/guards/AuthGuard';
 import GuestGuard from './components/guards/GuestGuard';
+import Favorites from './components/favorites/Favorites';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route element={<AuthGuard />}>
             <Route path="/logout" element={<Logout />} />
             <Route path="/catalog" element={<Catalog />} />
+            <Route path="/favorites" element={<Favorites />} />
             <Route path="/catalog/create-recipe" element={<CreateRecipe />} />
             <Route path="/catalog/recipes/:recipeId" element={<RecipeDetails />} />
             <Route path="/catalog/recipes/:recipeId/edit" element={<EditRecipe />} />

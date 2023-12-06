@@ -1,14 +1,17 @@
 import Layout from "../Layout";
 import styles from './RecipeDetails.module.css';
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import * as recipeService from '../../services/recipeService';
 import * as commentService from '../../services/commentService';
+import * as favoriteService from '../../services/favoriteService';
+import AuthContext from "../../contexts/authContext";
 
 export default function RecipeDetails() {
   const { recipeId } = useParams();
   const [recipe, setRecipe] = useState({ ingredients: [] });
   const [comments, setComments] = useState([]);
+  const auth = useContext(AuthContext);
 
   //GET ONE RECIPE FOR DETAILS FUNCTIONALITY
   useEffect(() => {
@@ -57,13 +60,25 @@ export default function RecipeDetails() {
     setComments(commentsResult);
   }
 
+  const addToFavoritesHandler = async () => {
+    try {
+      await favoriteService.create({userId: auth.userId, recipeId: recipeId}); 
+
+      const test = await favoriteService.getAllForUser(auth.userId);
+      console.log(test);
+    }
+    catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <Layout>
       <div className={styles.recipeDetailsWrapper}>
 
         <div className={styles.recipeDetails}>
           <img className={styles.recipeImage} src={recipe.imageUrl} alt={`${recipe.title} Image`} />
-          <img src="/heart.svg" alt="Favorites image" className={styles.favoritesIcon}/>
+          <img src="/heart.svg" alt="Favorites image" className={styles.favoritesIcon} onClick={addToFavoritesHandler}/>
           <div className={styles.recipeText}>
             <h1 className={styles.recipeTitle}>{recipe.title}</h1>
             <p className={styles.recipeCategory}>Category: {recipe.category}</p>
