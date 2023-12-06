@@ -1672,6 +1672,7 @@
         _id: "38a462fd-64c5-4943-bd3e-4ddc5f50166a",
       },
     },
+    subscribers: {},
     comments: {
       "e13410fc-ace7-45b9-b12b-ce393ba499e9": {
         _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",

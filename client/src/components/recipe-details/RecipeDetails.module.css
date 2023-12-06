@@ -1,6 +1,7 @@
 /* RecipeDetails.module.css */
 .recipeDetails {
   display: flex;
+  position: relative;
 }
 
 .recipeDetailsWrapper {
@@ -92,4 +93,11 @@ ul li {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 50%;
+}
+
+.favoritesIcon {
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
 }

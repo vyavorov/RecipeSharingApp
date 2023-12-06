@@ -63,6 +63,7 @@ export default function RecipeDetails() {
 
         <div className={styles.recipeDetails}>
           <img className={styles.recipeImage} src={recipe.imageUrl} alt={`${recipe.title} Image`} />
+          <img src="/heart.svg" alt="Favorites image" className={styles.favoritesIcon}/>
           <div className={styles.recipeText}>
             <h1 className={styles.recipeTitle}>{recipe.title}</h1>
             <p className={styles.recipeCategory}>Category: {recipe.category}</p>
