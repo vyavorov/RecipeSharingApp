@@ -12,6 +12,8 @@ export default function RecipeDetails() {
   const [recipe, setRecipe] = useState({ ingredients: [] });
   const [comments, setComments] = useState([]);
   const auth = useContext(AuthContext);
+  const [heartColor, setHeartColor] = useState("black");
+
 
   //GET ONE RECIPE FOR DETAILS FUNCTIONALITY
   useEffect(() => {
@@ -23,6 +25,10 @@ export default function RecipeDetails() {
         //GET ALL COMMENTS FROM SERVER
         const commentsResult = await commentService.getAll(recipeId);
         setComments(commentsResult);
+
+        const isFavorite = await favoriteService.isFavorite(auth.userId, recipeId);
+
+        setHeartColor(isFavorite ? "red" : "black");
       } catch (err) {
         console.log(err);
       }
@@ -62,10 +68,14 @@ export default function RecipeDetails() {
 
   const addToFavoritesHandler = async () => {
     try {
-      await favoriteService.create({userId: auth.userId, recipeId: recipeId}); 
+      await favoriteService.create({ userId: auth.userId, recipeId: recipeId });
+      if (heartColor === "black") {
+        setHeartColor("red");
+      }
+      else {
+        setHeartColor("black");
+      }
 
-      const test = await favoriteService.getAllForUser(auth.userId);
-      console.log(test);
     }
     catch (err) {
       console.log(err);
@@ -78,7 +88,19 @@ export default function RecipeDetails() {
 
         <div className={styles.recipeDetails}>
           <img className={styles.recipeImage} src={recipe.imageUrl} alt={`${recipe.title} Image`} />
-          <img src="/heart.svg" alt="Favorites image" className={styles.favoritesIcon} onClick={addToFavoritesHandler}/>
+          {/* <img src="/heart.svg" alt="Favorites image" className={styles.favoritesIcon} onClick={addToFavoritesHandler}/> */}
+          {/* <img src={`data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff0000"><path d="M12 21.35l-1.45-1.32C5.4 14.25 2 11.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 2.78-3.4 5.75-8.55 11.54L12 21.35z"/></svg>`} alt="Favorites image" className={styles.favoritesIcon} onClick={addToFavoritesHandler}/> */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill={heartColor} // Apply the fill color dynamically
+            className={styles.favoritesIcon}
+            onClick={addToFavoritesHandler}
+          >
+            {/* Include the path or content of your heart SVG here */}
+            <path d="M12 21.35l-1.45-1.32C5.4 14.25 2 11.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 2.78-3.4 5.75-8.55 11.54L12 21.35z" />
+          </svg>
+
           <div className={styles.recipeText}>
             <h1 className={styles.recipeTitle}>{recipe.title}</h1>
             <p className={styles.recipeCategory}>Category: {recipe.category}</p>
@@ -105,7 +127,7 @@ export default function RecipeDetails() {
         <h3 className={styles.commentHeader}>Comments:</h3>
         <section className={styles.commentSection}>
 
-          {comments.map(({_id, text, owner: {email}}) =>
+          {comments.map(({ _id, text, owner: { email } }) =>
             <p className={styles.commentItem} key={_id}>{email}: {text}</p>
           )}
 

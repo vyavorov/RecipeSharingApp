@@ -108,3 +108,15 @@ export const getRecipeFullData = async (recipeIds) => {
     return [];
   }
 };
+
+export const isFavorite = async (userId, recipeId) => {
+  const currentData = await getAll();
+  const foundRecipe = currentData.find(
+    (recipe) => recipe.userId === userId && recipe.recipeId === recipeId
+  );
+  if (foundRecipe) {
+    return true;
+  } else {
+    return false;
+  }
+};
