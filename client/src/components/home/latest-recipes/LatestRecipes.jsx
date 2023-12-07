@@ -14,8 +14,6 @@ export default function LatestRecipes() {
     try {
       const result = await recipeService.getLatest();
       setLatestRecipes(result);
-      console.log(result);
-      console.log(latestRecipes);
     } catch (err) {
       console.error("Error fetching recipes:", err);
     }

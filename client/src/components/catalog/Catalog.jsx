@@ -8,15 +8,15 @@ import { useEffect, useState } from "react";
 export default function Catalog() {
   //used to load the recipes in the initial mount
   const [recipes, setRecipes] = useState([]);
-  const [pageSize, setPageSize] = useState([]);
+  const [pagesCount, setPagesCount] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [offset, setOffset] = useState(0);
   const pageSizeToTake = 3;
   useEffect(() => {
     getAllCount()
       .then(count => {
-        const newPageSize = Array.from({ length: Math.ceil(count / 3) }, (_, index) => index + 1);
-        setPageSize(newPageSize);
+        const newPagesCount = Array.from({ length: Math.ceil(count / 3) }, (_, index) => index + 1);
+        setPagesCount(newPagesCount);
       });
     updateRecipes(offset, pageSizeToTake);
 
@@ -60,7 +60,7 @@ export default function Catalog() {
         <h3 className={styles.noRecipes}>No recipes yet...</h3>
       )}
       <div className={styles.pagesWrapper}>
-        {pageSize.map((page, index) => <button key={index} onClick={() => pageClickHandler(page)} className={currentPage === page ? styles.activeBtn : styles.pageBtn}>{page}</button>)}
+        {pagesCount.map((page, index) => <button key={index} onClick={() => pageClickHandler(page)} className={currentPage === page ? styles.activeBtn : styles.pageBtn}>{page}</button>)}
       </div>
     </Layout>
   )

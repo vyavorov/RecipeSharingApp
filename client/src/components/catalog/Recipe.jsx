@@ -18,7 +18,6 @@ export default function Recipe({ _id, title, imageUrl, prepTime, _ownerId, updat
   }
 
   const handleDelete = async () => {
-    console.log(_id);
     try {
       await recipeService.remove(_id);
       setDeleteModalOpen(false);

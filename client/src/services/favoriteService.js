@@ -84,7 +84,7 @@ export const getAllForUser = async (userId) => {
   }
 };
 
-export const getRecipeFullData = async (recipeIds) => {
+export const getRecipeFullData = async (recipeIds,offset,pageSize) => {
   try {
     // const response = await fetch(`${baseUrl}?offset=${offset}&pageSize=${pageSize}`); //WILL USE THIS
     // const whereClause = `_id in (${recipeIds.map(id => `%22${id}%22`).join(',')})`;  //THIS IS NOT WORKING FOR SOME REASON
@@ -102,12 +102,36 @@ export const getRecipeFullData = async (recipeIds) => {
     const filteredArray = data.filter((recipe) =>
       recipeIds.includes(recipe._id)
     );
-    return filteredArray;
+    const currentThreeItems = filteredArray.slice(offset,offset+3);
+    return currentThreeItems;
   } catch (error) {
     console.error("Error fetching recipes:", error);
     return [];
   }
 };
+
+export const getFilteredRecipesCount = async (recipeIds) => {
+    try {
+        const response = await fetch(`${recipesUrl}`); // THAT RETURNS ARRAY OF OBJECTS
+    
+        if (!response.ok) {
+          // Throw an error for non-2xx HTTP statuses
+          throw new Error(
+            `Failed to fetch favorite recipes. Status: ${response.status}`
+          );
+        }
+    
+        const data = await response.json();
+    
+        const filteredArray = data.filter((recipe) =>
+          recipeIds.includes(recipe._id)
+        );
+        return filteredArray.length;
+      } catch (error) {
+        console.error("Error fetching recipes:", error);
+        return [];
+      }
+}
 
 export const isFavorite = async (userId, recipeId) => {
   const currentData = await getAll();
