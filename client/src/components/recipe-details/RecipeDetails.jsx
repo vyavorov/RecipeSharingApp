@@ -17,26 +17,32 @@ export default function RecipeDetails() {
 
   //GET ONE RECIPE FOR DETAILS FUNCTIONALITY
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await recipeService.getOneById(recipeId);
-        setRecipe(result);
-
-        //GET ALL COMMENTS FROM SERVER
-        const commentsResult = await commentService.getAll(recipeId);
-        setComments(commentsResult);
-
-        const isFavorite = await favoriteService.isFavorite(auth.userId, recipeId);
-
-        setHeartColor(isFavorite ? "red" : "black");
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
     fetchData();
   }, [recipeId]);
 
+  const addRatingHandler = async (rating,recipeId) => {
+    await recipeService.addRatingHandler(rating,recipeId)
+  }
+
+  const fetchData = async () => {
+    try {
+      const result = await recipeService.getOneById(recipeId);
+      setRecipe(result);
+
+      //GET ALL COMMENTS FROM SERVER
+      const commentsResult = await commentService.getAll(recipeId);
+      setComments(commentsResult);
+
+      const isFavorite = await favoriteService.isFavorite(auth.userId, recipeId);
+
+      setHeartColor(isFavorite ? "red" : "black");
+
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  console.log(recipe.ratings);
 
   const [commentData, setCommentData] = useState({
     username: '',
@@ -87,9 +93,16 @@ export default function RecipeDetails() {
       <div className={styles.recipeDetailsWrapper}>
 
         <div className={styles.recipeDetails}>
-          <img className={styles.recipeImage} src={recipe.imageUrl} alt={`${recipe.title} Image`} />
-          {/* <img src="/heart.svg" alt="Favorites image" className={styles.favoritesIcon} onClick={addToFavoritesHandler}/> */}
-          {/* <img src={`data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff0000"><path d="M12 21.35l-1.45-1.32C5.4 14.25 2 11.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 2.78-3.4 5.75-8.55 11.54L12 21.35z"/></svg>`} alt="Favorites image" className={styles.favoritesIcon} onClick={addToFavoritesHandler}/> */}
+          <div className={styles.imageRatingWrapper}>
+            <img className={styles.recipeImage} src={recipe.imageUrl} alt={`${recipe.title} Image`} />
+            <div className={styles.ratingBtnWrapper}>
+              <button onClick={() => addRatingHandler(1,recipe._id)}>1</button>
+              <button onClick={() => addRatingHandler(2,recipe._id)}>2</button>
+              <button onClick={() => addRatingHandler(3,recipe._id)}>3</button>
+              <button onClick={() => addRatingHandler(4,recipe._id)}>4</button>
+              <button onClick={() => addRatingHandler(5,recipe._id)}>5</button>
+            </div>
+          </div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

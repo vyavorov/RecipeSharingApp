@@ -102,3 +102,12 @@ ul li {
   cursor: pointer;
   transition: fill 0.3s ease; /* Add transition property for fill color change */
 }
+
+.ratingBtnWrapper {
+  text-align: center;
+}
+
+.ratingBtnWrapper button {
+  margin: 8px;
+  padding: 8px;
+}

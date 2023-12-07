@@ -158,3 +158,10 @@ export const isValidImageUrl = async (imageUrl) => {
     throw error;
   }
 };
+
+export const addRatingHandler = async (rating, recipeId) => {
+  const targetRecipe = await getOneById(recipeId);
+  targetRecipe.ratings.push(rating);
+  await edit(targetRecipe, recipeId);
+  console.log(targetRecipe);
+}

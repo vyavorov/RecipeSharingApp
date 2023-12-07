@@ -5,7 +5,7 @@ import AuthContext from '../../contexts/authContext';
 import DeleteRecipe from '../delete-recipe/DeleteRecipe';
 import * as recipeService from '../../services/recipeService';
 
-export default function Recipe({ _id, title, imageUrl, prepTime, _ownerId, updateRecipes, latest, description, isFavorites }) {
+export default function Recipe({ _id, title, imageUrl, prepTime, _ownerId, updateRecipes, latest, description, isFavorites, ratings }) {
   const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -24,7 +24,7 @@ export default function Recipe({ _id, title, imageUrl, prepTime, _ownerId, updat
       if (!latest) {
         navigate('/catalog');
       }
-      updateRecipes(0,3);
+      updateRecipes(0, 3);
     } catch (err) {
       console.log(err);
     }
@@ -38,6 +38,9 @@ export default function Recipe({ _id, title, imageUrl, prepTime, _ownerId, updat
         <div className={styles.recipeTitle}>{title}</div>
         <div className={styles.recipeDescription}>{description}</div>
         <div className={styles.recipeTime}>{prepTime} minutes</div>
+        <div className={styles.rating}>
+          {(ratings.reduce((a,b) => a+b,0)) === 0 ? 0 : ((ratings.reduce((a,b) => a+b,0)) / ratings.length).toFixed(1)} / 5
+          </div>
         {/* REMOVE THE BELOW CONDITION IF BUTTONS ARE TO BE SHOWN ON HOME PAGE */}
         {!latest && (
           <div className={styles.recipeButtons}>

@@ -1488,6 +1488,7 @@
         imageUrl:
           "https://www.spendwithpennies.com/wp-content/uploads/2019/08/Chicken-Salad-Sandwich-SpendWithPennies-3.jpg",
         category: "Salad",
+        ratings: [4,5],
         _createdOn: 1701158944866,
         _id: "0d0a304d-c13f-44e5-bc87-9e9b7479f6e4",
       },
@@ -1532,6 +1533,7 @@
         imageUrl:
           "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1001491_11-2e0fa5c.jpg?quality=90&webp=true&resize=375,341",
         category: "Dinner",
+        ratings: [],
         _createdOn: 1701703034137,
         _id: "7d0e5e94-0bf4-42bc-9701-8d957ab8a3ea",
       },
@@ -1592,6 +1594,7 @@
         imageUrl:
           "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/triple-layered-berry-cheesecake-878b1b4.jpg?quality=90&webp=true&resize=375,341",
         category: "Dessert",
+        ratings: [],
         _createdOn: 1701703352117,
         _id: "fafef5d4-c408-4796-8756-b4ff653a96f3",
       },
@@ -1624,6 +1627,7 @@
         imageUrl:
           "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/rib-eye-steak-b24c48d.jpg?quality=90&webp=true&resize=375,341",
         category: "Dinner",
+        ratings: [],
         _createdOn: 1701703431650,
         _id: "faef9a45-9977-4db8-94a9-f8cb647315ca",
       },
@@ -1668,6 +1672,7 @@
         imageUrl:
           "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/sushi-cdb372e.jpg?quality=90&webp=true&resize=375,341",
         category: "Dinner",
+        ratings: [],
         _createdOn: 1701703584317,
         _id: "38a462fd-64c5-4943-bd3e-4ddc5f50166a",
       },
