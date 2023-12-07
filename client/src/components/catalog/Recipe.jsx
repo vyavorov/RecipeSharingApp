@@ -1,13 +1,22 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './Recipe.module.css';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import AuthContext from '../../contexts/authContext';
 import DeleteRecipe from '../delete-recipe/DeleteRecipe';
 import * as recipeService from '../../services/recipeService';
+import * as ratingService from '../../services/ratingService';
 
 export default function Recipe({ _id, title, imageUrl, prepTime, _ownerId, updateRecipes, latest, description, isFavorites, ratings }) {
   const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
   const navigate = useNavigate();
+  const [rating, setRating] = useState(0);
+
+  useEffect(() => {
+    getRatingForSpecificRecipe(_id)
+      .then(rating => setRating(rating));
+  }, [])
+
+  const getRatingForSpecificRecipe = async (id) =>  await ratingService.getRatingForSpecificRecipe(id);
 
   const openDeleteModal = () => {
     setDeleteModalOpen(true);
@@ -39,8 +48,8 @@ export default function Recipe({ _id, title, imageUrl, prepTime, _ownerId, updat
         <div className={styles.recipeDescription}>{description}</div>
         <div className={styles.recipeTime}>{prepTime} minutes</div>
         <div className={styles.rating}>
-          {(ratings.reduce((a,b) => a+b,0)) === 0 ? 0 : ((ratings.reduce((a,b) => a+b,0)) / ratings.length).toFixed(1)} / 5
-          </div>
+          {rating} / 5
+        </div>
         {/* REMOVE THE BELOW CONDITION IF BUTTONS ARE TO BE SHOWN ON HOME PAGE */}
         {!latest && (
           <div className={styles.recipeButtons}>

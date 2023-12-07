@@ -24,11 +24,8 @@ export default function RecipeDetails() {
   }, [recipeId]);
 
   const addRatingHandler = async (rating, recipeId) => {
-    await recipeService.addRatingHandler(rating, recipeId);
-
-    await ratingService.create({ userId: auth.userId, recipeId: recipeId });
+    await ratingService.create({ userId: auth.userId, recipeId: recipeId, rating: rating });
     setIsRecipeRated(true);
-    
   }
 
   const decideIfRatingWillBeShown = async () => {
@@ -58,8 +55,6 @@ export default function RecipeDetails() {
       console.log(err);
     }
   };
-
-  console.log(recipe.ratings);
 
   const [commentData, setCommentData] = useState({
     username: '',
