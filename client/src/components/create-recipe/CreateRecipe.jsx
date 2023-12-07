@@ -14,6 +14,7 @@ export default function CreateRecipe() {
     method: '',
     imageUrl: '',
     category: '',
+    ratings: []
   });
 
   const [imageUrlError, setImageUrlError] = useState('');

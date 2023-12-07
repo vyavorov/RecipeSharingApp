@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import * as recipeService from '../../services/recipeService';
 import * as commentService from '../../services/commentService';
 import * as favoriteService from '../../services/favoriteService';
+import * as ratingService from '../../services/ratingService';
 import AuthContext from "../../contexts/authContext";
 
 export default function RecipeDetails() {
@@ -13,15 +14,31 @@ export default function RecipeDetails() {
   const [comments, setComments] = useState([]);
   const auth = useContext(AuthContext);
   const [heartColor, setHeartColor] = useState("black");
+  const [isRecipeRated, setIsRecipeRated] = useState(false);
 
 
   //GET ONE RECIPE FOR DETAILS FUNCTIONALITY
   useEffect(() => {
+    decideIfRatingWillBeShown();
     fetchData();
   }, [recipeId]);
 
-  const addRatingHandler = async (rating,recipeId) => {
-    await recipeService.addRatingHandler(rating,recipeId)
+  const addRatingHandler = async (rating, recipeId) => {
+    await recipeService.addRatingHandler(rating, recipeId);
+
+    await ratingService.create({ userId: auth.userId, recipeId: recipeId });
+    setIsRecipeRated(true);
+    
+  }
+
+  const decideIfRatingWillBeShown = async () => {
+    const checkIfRecipeIsRated = await ratingService.isRated(auth.userId, recipeId);
+    if (checkIfRecipeIsRated) {
+      setIsRecipeRated(true);
+    }
+    else {
+      setIsRecipeRated(false);
+    }
   }
 
   const fetchData = async () => {
@@ -95,13 +112,18 @@ export default function RecipeDetails() {
         <div className={styles.recipeDetails}>
           <div className={styles.imageRatingWrapper}>
             <img className={styles.recipeImage} src={recipe.imageUrl} alt={`${recipe.title} Image`} />
-            <div className={styles.ratingBtnWrapper}>
-              <button onClick={() => addRatingHandler(1,recipe._id)}>1</button>
-              <button onClick={() => addRatingHandler(2,recipe._id)}>2</button>
-              <button onClick={() => addRatingHandler(3,recipe._id)}>3</button>
-              <button onClick={() => addRatingHandler(4,recipe._id)}>4</button>
-              <button onClick={() => addRatingHandler(5,recipe._id)}>5</button>
-            </div>
+            {!isRecipeRated &&
+              <div className={styles.ratingBtnWrapper}>
+                <button onClick={() => addRatingHandler(1, recipe._id)}>1</button>
+                <button onClick={() => addRatingHandler(2, recipe._id)}>2</button>
+                <button onClick={() => addRatingHandler(3, recipe._id)}>3</button>
+                <button onClick={() => addRatingHandler(4, recipe._id)}>4</button>
+                <button onClick={() => addRatingHandler(5, recipe._id)}>5</button>
+              </div>
+            }
+            {isRecipeRated && 
+            <p>You've rated this recipe successfully!</p>}
+
           </div>
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -1678,6 +1678,7 @@
       },
     },
     subscribers: {},
+    ratings: {},
     favorites: {},
     comments: {
       "e13410fc-ace7-45b9-b12b-ce393ba499e9": {
