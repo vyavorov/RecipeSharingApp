@@ -1,9 +1,9 @@
 **Recipe Sharing App**
 
-  Overview
+**Overview**:
   Welcome to the Recipe Sharing App! This application is designed to help users discover and share delicious and healthy recipes. Whether you're a seasoned chef or just starting in the kitchen, this app provides a platform for users to showcase their culinary creations, rate recipes, and build a collection of favorites.
 
-**Features**
+**Features**:
 
   **Landing Page**: Introduces the concept of healthy eating and showcases the latest 3 recipes uploaded.
   
@@ -17,10 +17,10 @@
   
   **User Interaction**: Users can comment on recipes, rate them, and edit or delete their own recipes.
 
-**Getting Started**
+**Getting Started**:
   Follow these steps to download and run the Recipe Sharing App on your local machine.
   
-**Prerequisites**
+**Prerequisites**:
   Node.js installed
   npm (Node Package Manager) installed
 
@@ -41,5 +41,5 @@
       Email: peter@abv.bg
       Password: 123456
 
-**Contact**
+**Contact**:
   For queries or support, please contact: yavorov1995@gmail.com
