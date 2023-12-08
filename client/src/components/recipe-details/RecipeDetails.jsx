@@ -109,15 +109,23 @@ export default function RecipeDetails() {
             <img className={styles.recipeImage} src={recipe.imageUrl} alt={`${recipe.title} Image`} />
             {!isRecipeRated &&
               <div className={styles.ratingBtnWrapper}>
-                <button onClick={() => addRatingHandler(1, recipe._id)}>1</button>
-                <button onClick={() => addRatingHandler(2, recipe._id)}>2</button>
-                <button onClick={() => addRatingHandler(3, recipe._id)}>3</button>
-                <button onClick={() => addRatingHandler(4, recipe._id)}>4</button>
-                <button onClick={() => addRatingHandler(5, recipe._id)}>5</button>
+                <p className={styles.ratingParagraph}>How would you rate this recipe?</p>
+                <div className={styles.rating}>
+                  <input id="rating1" type="radio" onClick={() => addRatingHandler(1, recipe._id)} name="rating" value="1" />
+                  <label htmlFor="rating1"> </label>
+                  <input id="rating2" type="radio" onClick={() => addRatingHandler(2, recipe._id)} name="rating" value="2" />
+                  <label htmlFor="rating2"> </label>
+                  <input id="rating3" type="radio" onClick={() => addRatingHandler(3, recipe._id)} name="rating" value="3" />
+                  <label htmlFor="rating3"> </label>
+                  <input id="rating4" type="radio" onClick={() => addRatingHandler(4, recipe._id)} name="rating" value="4" />
+                  <label htmlFor="rating4"> </label>
+                  <input id="rating5" type="radio" onClick={() => addRatingHandler(5, recipe._id)} name="rating" value="5" />
+                  <label htmlFor="rating5"> </label>
+                </div>
               </div>
             }
-            {isRecipeRated && 
-            <p>You've rated this recipe successfully!</p>}
+            {isRecipeRated &&
+              <p>You've rated this recipe successfully!</p>}
 
           </div>
           <svg

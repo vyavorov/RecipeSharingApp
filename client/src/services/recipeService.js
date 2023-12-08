@@ -159,6 +159,7 @@ export const isValidImageUrl = async (imageUrl) => {
   }
 };
 
+//the below doesn't work because only owners of the recipes can edit due to server limitations
 export const addRatingHandler = async (rating, recipeId) => {
   const targetRecipe = await getOneById(recipeId);
   targetRecipe.ratings.push(rating);
