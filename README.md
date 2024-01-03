@@ -43,3 +43,9 @@
 
 **Contact**:
   For queries or support, please contact: yavorov1995@gmail.com
+![image](https://github.com/vyavorov/RecipeSharingApp/assets/25877713/a59f28fc-b28c-464b-9dea-8be043a5319e)
+![image](https://github.com/vyavorov/RecipeSharingApp/assets/25877713/f5dab361-84b8-4009-b199-2d8cbf60b278)
+![image](https://github.com/vyavorov/RecipeSharingApp/assets/25877713/9eb5fc6b-acb6-4782-a03b-8c4360a89339)
+![image](https://github.com/vyavorov/RecipeSharingApp/assets/25877713/d720c595-58a8-4f0a-bc1f-32b640b51327)
+![image](https://github.com/vyavorov/RecipeSharingApp/assets/25877713/724070b7-1c74-4795-b9dd-823d8d326c9e)
+![image](https://github.com/vyavorov/RecipeSharingApp/assets/25877713/ab6492bb-a3b5-4af9-8ad5-64ef8e3eb17d)
